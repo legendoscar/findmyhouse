@@ -8,7 +8,7 @@ class PagesController extends Controller
 {
     
     public function getHome(){
-    	return view('home');
+    	return view('index');
     }
     public function getContact(){
     	return view('contact');
@@ -16,16 +16,16 @@ class PagesController extends Controller
     public function getAbout(){
     	return view('about');
     }
-    public function getService(){
-    	return view('service');
+    public function getPlaces(){
+    	return view('places');
     }
-    public function getPredict(){
-        return view('predict');
+    public function getBlog(){
+        return view('blog');
     }
-    public function getGames(){
-        return view('games');
+    public function getCategories(){
+        return view('categories');
     }
-    public function getLogin(){
-        return view('login');
+    public function getListing(){
+        return view('listings');
     }
 }
