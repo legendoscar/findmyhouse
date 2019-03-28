@@ -18,3 +18,7 @@ Route::get('categories', 'PagesController@getCategories');
 Route::get('contact', 'PagesController@getContact');
 Route::get('listings', 'PagesController@getListing');
 Route::get('places', 'PagesController@getPlaces');
+
+//Routes for All Registrations
+Route::get('/AgentRegistrationPage','AgentsController@create');
+Route::post('/register','AgentsController@store');

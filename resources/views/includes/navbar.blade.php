@@ -27,8 +27,8 @@
                         <a href="#"><i class="fa fa-linkedin"></i></a>
                     </div>
                     <div class="user-panel">
-                        <a href="register.php"><i class="fa fa-user-circle-o"></i> Become our Agent</a>
-                        <a href="login.php"><i class="fa fa-sign-in"></i> Login</a>
+                        <a href="/AgentRegistrationPage"><i class="fa fa-user-circle-o"></i> Become our Agent</a>
+                        <a href="/login"><i class="fa fa-sign-in"></i> Login</a>
                     </div>
                 </div>
             </div>
