@@ -11,7 +11,7 @@
 |
 */
 //Routes for the getting the whole web pages on view root folder
-Route::get('/index', 'PagesController@getHome')->name('home');
+Route::get('/', 'PagesController@getHome')->name('home');
 Route::get('about', 'PagesController@getAbout');
 Route::get('blog', 'PagesController@getBlog');
 Route::get('categories', 'PagesController@getCategories');

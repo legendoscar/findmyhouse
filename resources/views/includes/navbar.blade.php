@@ -44,7 +44,7 @@
                         <i class="fa fa-bars"></i>
                     </div>
                     <ul class="main-menu">
-                        <li><a href="/index">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="/listings">PROPERTY LISTINGS</a></li>
                         <!-- <li><a href="places.php">PLACES</a></li> -->
                         <li><a href="/categories">FILTER BY</a></li>
