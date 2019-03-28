@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     
-    public function getHome(){
+    public function getHome(){ 
     	return view('index');
     }
     public function getContact(){
