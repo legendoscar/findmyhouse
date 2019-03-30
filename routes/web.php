@@ -11,7 +11,7 @@
 |
 */
 //Routes for the getting the whole web pages on view root folder
-Route::get('/', 'PagesController@getHome')->name('home');
+Route::get('/', 'PagesController@getHome');
 Route::get('about', 'PagesController@getAbout');
 Route::get('blog', 'PagesController@getBlog');
 Route::get('categories', 'PagesController@getCategories');
@@ -20,5 +20,8 @@ Route::get('listings', 'PagesController@getListing');
 Route::get('places', 'PagesController@getPlaces');
 
 //Routes for All Registrations
-Route::get('/AgentRegistrationPage','AgentsController@create');
-Route::post('/register','AgentsController@store');
+// Route::get('/AgentRegistrationPage','AgentsController@create');
+// Route::post('/register','AgentsController@store');
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
