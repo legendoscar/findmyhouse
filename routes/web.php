@@ -32,4 +32,5 @@ Route::get('/profile','ProfilesController@profile');
 
 //Routes for the locations.
 Route::get('/location','LocationsController@location');
+Route::post('/addlocation','LocationsController@addLocation');
 
