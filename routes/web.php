@@ -19,9 +19,17 @@ Route::get('contact', 'PagesController@getContact');
 Route::get('listings', 'PagesController@getListing');
 Route::get('places', 'PagesController@getPlaces');
 
-//Routes for All Registrations
-// Route::get('/AgentRegistrationPage','AgentsController@create');
-// Route::post('/register','AgentsController@store');
-
+//Routes for All Registrations and login
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Routs for Properties
+Route::get('/property','PropertiesController@post');
+
+//Routes for Profile
+Route::get('/profile','ProfilesController@profile');
+
+
+//Routes for the locations.
+Route::get('/location','LocationsController@location');
+
