@@ -28,6 +28,7 @@ Route::get('/property','PropertiesController@post');
 
 //Routes for Profile
 Route::get('/profile','ProfilesController@profile');
+Route::post('/addprofile', 'ProfilesController@addProfile');
 
 
 //Routes for the locations.
