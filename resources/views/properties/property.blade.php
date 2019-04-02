@@ -47,9 +47,14 @@
                             <label for="location_id" class="col-md-4 control-label">Location:</label>
                             <div class="col-md-6">
                             <select name="location_id" class="form-control">
-                                    <option>Orji</option>
-                                    <option>WorldBank</option>
-                                    <option>Ikeduru</option>
+                            <option>Select</option>
+                            @if(count($location) > 0)
+                                @foreach($location->all() as $location)
+                                <option value="{{$location->id}}">{{$location->location}}</option>
+                                @endforeach
+
+                            @endif
+                                    
                             </select>
                             @if ($errors->has('location'))
                                     <span class="help-block">

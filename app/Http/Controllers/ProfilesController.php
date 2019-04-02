@@ -28,7 +28,7 @@ class ProfilesController extends Controller
             'profile_image'=>'required'
 
         ]);
-            $profile = new profile;
+            $profile = new Profile;
             $profile->user_id = Auth::user()->id;
             $profile->firstname = $request->input('firstName');
             $profile->middlename = $request->input('middleName');

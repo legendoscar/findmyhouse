@@ -21,11 +21,11 @@ Route::get('places', 'PagesController@getPlaces');
 
 //Routes for All Registrations and login
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home'); 
 
 //Routs for Properties
 Route::get('/property','PropertiesController@post');
-
+Route::post('/addproperty','PropertiesController@addProperty');
 //Routes for Profile
 Route::get('/profile','ProfilesController@profile');
 Route::post('/addprofile', 'ProfilesController@addProfile');
