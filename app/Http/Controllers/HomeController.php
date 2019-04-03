@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Profile;
 use App\User;
 use Auth;
-
+use App\Property;
 class HomeController extends Controller
 {
     /**
@@ -27,7 +27,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-
+//for displaying the user profile
         $user_id = Auth::user()->id;
         $profile = DB::table('users')->
         join('profiles','users.id', '=' , 'profiles.user_id')
@@ -35,6 +35,9 @@ class HomeController extends Controller
         ->where(['profiles.user_id' => $user_id ])
         ->first();
 
-        return view('home',compact('profile'));
+        //for displaying the posts
+            $properties = Property::all();
+            
+        return view('home',compact('profile','properties'));
     }
 }

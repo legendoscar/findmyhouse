@@ -26,6 +26,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Routs for Properties
 Route::get('/property','PropertiesController@post');
 Route::post('/addproperty','PropertiesController@addProperty');
+Route::get('/view/{id}','PropertiesController@view');
+Route::get('/edit/{id}','PropertiesController@edit');
+Route::get('/delete/{id}','PropertiesController@delete');
+
 //Routes for Profile
 Route::get('/profile','ProfilesController@profile');
 Route::post('/addprofile', 'ProfilesController@addProfile');

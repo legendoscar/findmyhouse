@@ -19,7 +19,7 @@
                             {{ session('response') }}
                         </div>
                     @endif
-            <div class="panel panel-default">
+            <div class="panel panel-default text-center">
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
@@ -38,7 +38,37 @@
                 </div>
                 @endif
                 <div class="col-md-8">
-                
+                @if(count($properties) > 0)
+
+                @foreach($properties->all() as $property)
+                    <h1>{{$property->property_title}}</h1>
+                    <img src="{{ $property->property_image }}" alt="" width="100%">
+                    <p>{{substr($property->description , 0,150)}}</p>
+                    <ul class="nav nav-pills">
+                        <li role="presentation">
+                            <a href='{{ url("/view/{$property->id}") }}'>
+                                <span class="fa fa-eye">View</span>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href='{{ url("/edit/{$property->id}") }}'>
+                                <span class="fa fa-eye">Edit</span>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href='{{ url("/delete/{$property->id}") }}'>
+                                <span class="fa fa-eye">Delete</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                    <cite style="float:left">Posted On: {{date('M j, Y h:i', strtotime($property->updated_at))}}</cite>
+                    <hr>
+                @endforeach
+                @else
+                <h2>NO POST AVAILABLE</h2>
+
+                @endif
                 </div>
                     
                 </div>

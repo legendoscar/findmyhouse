@@ -12,14 +12,15 @@ use Auth;
 
 class PropertiesController extends Controller
 {
-    public function post(){
+public function post(){
         $profile = "Null profile";
         $location = Location::all();
         
         return view('properties.property',compact('profile','location'));
-    }
+        }
 
-    public function addProperty(Request $request){
+public function addProperty(Request $request){
+    
         $this->validate($request, [
             "property_title"=>"required",
             "price"=>'required',
@@ -36,13 +37,24 @@ class PropertiesController extends Controller
            
             if(Input::hasFile('property_image')){
                 $file = Input::file('property_image');
-                $file->move(public_path(). '/uploads/' , $file->getClientOriginalName());
-                $url = URL::to('/') . '/uploads/' . $file->getClientOriginalName();
+                $file->move(public_path(). '/properties/' , $file->getClientOriginalName());
+                $url = URL::to('/') . '/properties/' . $file->getClientOriginalName();
             }
 
             $property->property_image = $url;
             $property->save();
            return redirect('/home')->with('response','Property added  successfully');
         
-    }
+     }
+
+public function view($property_id){
+    return "helloview";
 }
+public function edit($property_id){
+    return "helloedit";
+}
+public function delete($property_id){
+    return "hellodelete";
+}
+}
+
