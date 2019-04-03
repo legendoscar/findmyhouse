@@ -28,6 +28,7 @@ Route::get('/property','PropertiesController@post');
 Route::post('/addproperty','PropertiesController@addProperty');
 Route::get('/view/{id}','PropertiesController@view');
 Route::get('/edit/{id}','PropertiesController@edit');
+Route::post('/editproperty/{id}','PropertiesController@editProperty');
 Route::get('/delete/{id}','PropertiesController@delete');
 
 //Routes for Profile

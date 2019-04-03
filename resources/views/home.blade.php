@@ -52,12 +52,12 @@
                         </li>
                         <li role="presentation">
                             <a href='{{ url("/edit/{$property->id}") }}'>
-                                <span class="fa fa-eye">Edit</span>
+                                <span class="fa fa-pencil-square-o">Edit</span>
                             </a>
                         </li>
                         <li role="presentation">
                             <a href='{{ url("/delete/{$property->id}") }}'>
-                                <span class="fa fa-eye">Delete</span>
+                                <span class="fa fa-trash">Delete</span>
                             </a>
                         </li>
                         
@@ -69,6 +69,7 @@
                 <h2>NO POST AVAILABLE</h2>
 
                 @endif
+                {{$properties->links()}}
                 </div>
                     
                 </div>

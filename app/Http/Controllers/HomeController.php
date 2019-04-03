@@ -36,7 +36,7 @@ class HomeController extends Controller
         ->first();
 
         //for displaying the posts
-            $properties = Property::all();
+            $properties = Property::paginate(2);
             
         return view('home',compact('profile','properties'));
     }

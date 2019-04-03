@@ -39,8 +39,7 @@
                         <li><a href="{{url('/home')}}">HOME</a></li>
                         @if(!empty($profile))
                         <li><a href="{{url('/property')}}">Add Property</a></li>
-                        @else
-                        <li><a href="{{url('/profile')}}">Create Profile</a></li>
+                        
                         @endif
                     </ul>
 
