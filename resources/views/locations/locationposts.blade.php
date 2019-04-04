@@ -32,31 +32,33 @@
                 @foreach($properties->all() as $property)
                     <h1>{{$property->property_title}}</h1>
                     <img src="{{ $property->property_image }}" alt="" width="100%">
-                    <p>{{$property->description }}</p>
+                    <p>{{substr($property->description , 0,150)}}</p>
                     <ul class="nav nav-pills">
                         <li role="presentation">
-                            <a href='{{ url("/like/{$property->id}") }}'>
-                                <span class="fa fa-thumbs-up">Like</span>
+                            <a href='{{ url("/view/{$property->id}") }}'>
+                                <span class="fa fa-eye">View</span>
                             </a>
                         </li>
                         <li role="presentation">
-                            <a href='{{ url("/dislike/{$property->id}") }}'>
-                                <span class="fa fa-thumbs-down">Dislike</span>
+                            <a href='{{ url("/edit/{$property->id}") }}'>
+                                <span class="fa fa-pencil-square-o">Edit</span>
                             </a>
                         </li>
                         <li role="presentation">
-                            <a href='{{ url("/comment/{$property->id}") }}'>
-                                <span class="fa fa-comment-o">Comment</span>
+                            <a href='{{ url("/delete/{$property->id}") }}'>
+                                <span class="fa fa-trash">Delete</span>
                             </a>
                         </li>
                         
                     </ul>
-                    
+                    <cite style="float:left">Posted On: {{date('M j, Y h:i', strtotime($property->updated_at))}}</cite>
+                    <hr>
                 @endforeach
                 @else
                 <h2>NO PROPERTY AVAILABLE</h2>
 
                 @endif
+                {{$properties->links()}}
                 </div>
                     
                 </div>

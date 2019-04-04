@@ -30,6 +30,7 @@ Route::get('/view/{id}','PropertiesController@view');
 Route::get('/edit/{id}','PropertiesController@edit');
 Route::post('/editproperty/{id}','PropertiesController@editProperty');
 Route::get('/delete/{id}','PropertiesController@delete');
+Route::get('/location/{id}','PropertiesController@location');
 
 //Routes for Profile
 Route::get('/profile','ProfilesController@profile');
@@ -39,4 +40,6 @@ Route::post('/addprofile', 'ProfilesController@addProfile');
 //Routes for the locations.
 Route::get('/location','LocationsController@location');
 Route::post('/addlocation','LocationsController@addLocation');
+
+
 

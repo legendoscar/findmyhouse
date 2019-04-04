@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\DB;
 use App\Property;
 use App\Location;
 use Auth;
@@ -101,5 +102,16 @@ public function delete($property_id){
     return redirect('/home')->with('response','Property deleted  successfully');
 
 }
+public function location($property_id){
+    $locations = Location::all();
+    $properties = DB::table('properties')
+    ->join('locations','properties.location_id','=','locations.id')
+    ->where(['locations.id' => $property_id])
+    ->select('properties.*','locations.*')->paginate(1);
+
+ return view('locations.locationposts',compact('locations','properties'));
+
+}
+
 }
 
