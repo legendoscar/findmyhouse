@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use App\Location;
 class LocationsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function location(){
         return view('locations.location');
     }

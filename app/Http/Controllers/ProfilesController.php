@@ -11,6 +11,11 @@ use Auth;
 
 class ProfilesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function profile(){
         return view('profiles.profile');
     }

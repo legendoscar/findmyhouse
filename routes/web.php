@@ -31,6 +31,12 @@ Route::get('/edit/{id}','PropertiesController@edit');
 Route::post('/editproperty/{id}','PropertiesController@editProperty');
 Route::get('/delete/{id}','PropertiesController@delete');
 Route::get('/location/{id}','PropertiesController@location');
+Route::get('/like/{id}','PropertiesController@like');
+Route::get('/dislike/{id}','PropertiesController@dislike');
+Route::post('/addcomment/{id}','PropertiesController@addComment');
+Route::post('/search','PropertiesController@search');
+
+
 
 //Routes for Profile
 Route::get('/profile','ProfilesController@profile');

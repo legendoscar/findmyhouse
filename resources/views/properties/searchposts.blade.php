@@ -91,7 +91,7 @@
                 <h2>NO POST AVAILABLE</h2>
 
                 @endif
-                {{$properties->links()}}
+               
                 </div>
                     
                 </div>

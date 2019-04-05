@@ -36,17 +36,17 @@
                     <ul class="nav nav-pills">
                         <li role="presentation">
                             <a href='{{ url("/like/{$property->id}") }}'>
-                                <span class="fa fa-thumbs-up">Like</span>
+                                <span class="fa fa-thumbs-up">Like ({{$likeCounter}})</span>
                             </a>
                         </li>
                         <li role="presentation">
                             <a href='{{ url("/dislike/{$property->id}") }}'>
-                                <span class="fa fa-thumbs-down">Dislike</span>
+                                <span class="fa fa-thumbs-down">Dislike ({{$dislikeCounter}})</span>
                             </a>
                         </li>
                         <li role="presentation">
                             <a href='{{ url("/comment/{$property->id}") }}'>
-                                <span class="fa fa-comment-o">Comment</span>
+                                <span class="fa fa-comment-o">Comment ({{$commentCounter}})</span>
                             </a>
                         </li>
                         
@@ -57,6 +57,45 @@
                 <h2>NO PROPERTY AVAILABLE</h2>
 
                 @endif
+               
+                <form class="form-horizontal" method="POST" action='{{ url("/addcomment/{$property->id}")}}'
+                 enctype = "multipart/form-data" >
+                        {{ csrf_field() }}
+
+                            <div class="form-group">
+                                <textarea id="comment"  rows="6" type="text" class="form-control" name="comment"
+                                  required autofocus></textarea>
+
+                                @if ($errors->has('comment'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('comment') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                           
+
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary float-left">
+                                    Add Comment 
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <ul class="list-group">
+                
+                @if(count($comments) > 0)
+
+                @foreach($comments->all() as $comment)
+
+                <li class="list-group-item">{{$comment->comment}}</li>
+                <p>Posted by:{{$comment->name}}</p>
+
+                @endforeach
+
+                @endif
+                </ul>
                 </div>
                     
                 </div>

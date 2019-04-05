@@ -9,10 +9,19 @@ use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\DB;
 use App\Property;
 use App\Location;
+use App\Like;
+use App\Dislike;
+use App\Comment;
+use App\Profile;
 use Auth;
 
 class PropertiesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
 public function post(){
         $profile = "Null profile";
         $location = Location::all();
@@ -50,8 +59,22 @@ public function addProperty(Request $request){
 
 public function view($property_id){
     $properties =Property::where('id', '=', $property_id)->get();
+    $likeProperty = Property::find($property_id);
+    $commentProperty = Property::find($property_id);
+    $likeCounter = Like::where(['property_id' => $likeProperty->id])->count();
+    $dislikeCounter = Dislike::where(['property_id' => $likeProperty->id])->count();
+    $commentCounter = Comment::where(['property_id' => $commentProperty->id])->count();
+
+    $comments = DB::table('users')
+    ->join('comments','users.id','=','comments.user_id')
+    ->join('properties','comments.property_id','=', 'properties.id')
+    ->where(['properties.id' => $property_id])
+    ->select('users.name','comments.*')->get();
+    // return $comments;
+    // exit();
     $locations = Location::all();
-    return view('properties.view',compact('properties','locations'));
+    return view('properties.view',compact('properties','locations','likeCounter',
+    'dislikeCounter','commentCounter','comments'));
     
 }
 public function edit($property_id){
@@ -112,6 +135,65 @@ public function location($property_id){
  return view('locations.locationposts',compact('locations','properties'));
 
 }
+public function like($id){
+    $loggedin_user= Auth::user()->id;
+    $like_user = Like::where(['user_id'=>$loggedin_user,'property_id' => $id])->first();
+    if(empty($like_user->user_id)){
+        $user_id = Auth::user()->id;
+        $email = Auth::user()->email;
+        $property_id = $id;
+        $like = new Like;
+        $like->user_id = $user_id;
+        $like->email = $email;
+        $like->property_id = $property_id;
+        $like->save();
 
+        return redirect("/view/{$id}");
+    }
+    return redirect("/view/{$id}");
+    
+}
+public function dislike($id){
+    $loggedin_user= Auth::user()->id;
+    $like_user = Dislike::where(['user_id'=>$loggedin_user,'property_id' => $id])->first();
+    if(empty($like_user->user_id)){
+        $user_id = Auth::user()->id;
+        $email = Auth::user()->email;
+        $property_id = $id;
+        $dislike = new Dislike;
+        $dislike->user_id = $user_id;
+        $dislike->email = $email;
+        $dislike->property_id = $property_id;
+        $dislike->save();
+
+        return redirect("/view/{$id}");
+    }
+    return redirect("/view/{$id}");
+    
+}
+public function addComment(Request $request, $property_id){
+    $this->validate($request,[
+        'comment'=>'required',
+    ]);
+    $comment = new Comment;
+    $comment->user_id = Auth::user()->id;
+    $comment->property_id = $property_id;
+    $comment->comment = $request->input('comment');
+    $comment->save();
+    
+    return redirect("/view/{$property_id}");
+}
+public function search(Request $request){
+    $user_id = Auth::user()->id;
+    $profile = Profile::find($user_id);
+    $keyword = $request->input('search');
+    $properties = Property::where('property_title', 'LIKE', '%' . $keyword . '%')->get();
+    
+    return view('properties.searchposts',compact('profile','properties'));
+
+
+
+
+}
 }
 
