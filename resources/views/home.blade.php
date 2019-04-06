@@ -6,7 +6,7 @@
  }
 </style>
 @section('content')
-<div class="container">
+<div class="container"> 
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
         @if(count($errors) > 0)
@@ -49,7 +49,7 @@
                <div class="col-md-4">
                     <img src="{{ $profile->profile_image }}" 
                     class="avatar" alt=""> 
-                   <p class="lead">{{$profile->name}}</p>
+                   <p class="lead">{{$profile->firstname}}</p>
                    <p class="lead">{{$profile->email}}</p>
                 </div>
                @else

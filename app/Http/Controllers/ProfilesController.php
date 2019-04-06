@@ -22,27 +22,11 @@ class ProfilesController extends Controller
 
     public function addProfile(Request $request){
         $this->validate($request,[
-            'firstName'=>'required',
-            'middleName'=>'required',
-            'lastName'=>'required',
-            'email'=>'required',
-            'state'=>'required',
-            'address'=>'required',
-            'dob'=>'required',
-            'gender'=>'required',
             'profile_image'=>'required'
 
         ]);
             $profile = new Profile;
             $profile->user_id = Auth::user()->id;
-            $profile->firstname = $request->input('firstName');
-            $profile->middlename = $request->input('middleName');
-            $profile->lastname = $request->input('lastName');
-            $profile->email = $request->input('email');
-            $profile->state = $request->input('state');
-            $profile->address = $request->input('address');
-            $profile->dob = $request->input('dob');
-            $profile->gender = $request->input('gender');
 
             
             if(Input::hasFile('profile_image')){

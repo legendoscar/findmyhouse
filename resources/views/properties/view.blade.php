@@ -90,7 +90,7 @@
                 @foreach($comments->all() as $comment)
 
                 <li class="list-group-item">{{$comment->comment}}</li>
-                <p>Posted by:{{$comment->name}}</p>
+                <p>Posted by:{{$comment->middlename}}</p>
 
                 @endforeach
 

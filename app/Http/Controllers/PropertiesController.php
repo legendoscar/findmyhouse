@@ -35,7 +35,11 @@ public function addProperty(Request $request){
             "property_title"=>"required",
             "price"=>'required',
             "location_id"=>'required',
+            "address"=>'required',
             "description"=>"required",
+            "bedroom"=>'required',
+            "bathroom"=>'required',
+            "status"=>'required',
             "property_image"=>"required",
         ]);
         $property = new Property;
@@ -44,6 +48,10 @@ public function addProperty(Request $request){
             $property->property_title = $request->input('property_title');
             $property->description = $request->input('description');
             $property->price = $request->input('price');
+            $property->address = $request->input('address');
+            $property->status = $request->input('status');
+            $property->bathroom = $request->input('bathroom');
+            $property->bedroom = $request->input('bedroom');
            
             if(Input::hasFile('property_image')){
                 $file = Input::file('property_image');
@@ -69,7 +77,7 @@ public function view($property_id){
     ->join('comments','users.id','=','comments.user_id')
     ->join('properties','comments.property_id','=', 'properties.id')
     ->where(['properties.id' => $property_id])
-    ->select('users.name','comments.*')->get();
+    ->select('users.middlename','comments.*')->get();
     // return $comments;
     // exit();
     $locations = Location::all();

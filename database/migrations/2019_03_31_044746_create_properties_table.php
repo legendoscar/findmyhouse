@@ -18,8 +18,12 @@ class CreatePropertiesTable extends Migration
             $table->integer('user_id');
             $table->integer('location_id');
             $table->string('property_title');
-            $table->string('price');
             $table->text('description');
+            $table->string('price');
+            $table->string('address');
+            $table->string('status');
+            $table->string('bathroom');
+            $table->string('bedroom');
             $table->string('property_image');
             $table->timestamps();
         });

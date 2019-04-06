@@ -65,6 +65,21 @@
                             </div>
                             </div>
 
+                            <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
+                            <label for="description" class="col-md-4 control-label">Address:</label>
+
+                            <div class="col-md-6">
+                                <textarea id="description"  rows="2" type="text" class="form-control" 
+                                name="address" required autofocus>{{ $properties->address }}</textarea>
+
+                                @if ($errors->has('address'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('address') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            </div>
+
                             <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
                             <label for="description" class="col-md-4 control-label">Description:</label>
 
@@ -80,8 +95,55 @@
                             </div>
                             </div>
 
-                            
+                            <div class="form-group{{ $errors->has('bathroom') ? ' has-error' : '' }}">
+                            <label for="location_id" class="col-md-4 control-label">Bathroom:</label>
+                            <div class="col-md-6">
+                            <select name="bathroom" class="form-control">
+                            <option>{{$properties->bathroom}}</option>
+                           
+                                    <option>1 Bathroom</option>
+                                    <option>2 Bathrooms</option>
+                                    <option>3 Bathrooms</option>
+                                    <option>4 Bathrooms</option>
+                                    <option>5 Bathrooms</option>
+                                    <option>6 Bathrooms</option>
+                                    <option>7 Bathrooms</option>
+                                    <option>8 Bathrooms</option>
+                               
+                                    
+                            </select>
+                            @if ($errors->has('bathroom'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('bathroom') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            </div>
 
+                            <div class="form-group{{ $errors->has('bedroom') ? ' has-error' : '' }}">
+                            <label for="location_id" class="col-md-4 control-label">Bedroom:</label>
+                            <div class="col-md-6">
+                            <select name="bathroom" class="form-control">
+                            <option>{{$properties->bedroom}}</option>
+                           
+                                    <option>1 Bedroom</option>
+                                    <option>2 Bedrooms</option>
+                                    <option>3 Bedrooms</option>
+                                    <option>4 Bedrooms</option>
+                                    <option>5 Bedrooms</option>
+                                    <option>6 Bedrooms</option>
+                                    <option>7 Bedrooms</option>
+                                    <option>8 Bedrooms</option>
+                               
+                                    
+                            </select>
+                            @if ($errors->has('bedroom'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('bedroom') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            </div>
                             
 
                             <div class="form-group{{ $errors->has('property_image') ? ' has-error' : '' }}">
@@ -103,7 +165,7 @@
                             <div class="col-md-8 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     Edit Property 
-                                </button>
+                                </button> 
                             </div>
                         </div>
                     </form>
