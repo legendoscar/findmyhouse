@@ -22,7 +22,7 @@ class ProfilesController extends Controller
 
     public function addProfile(Request $request){
         $this->validate($request,[
-            'profile_image'=>'required'
+            'profile_image'=>'image|nullable|max:1999'
 
         ]);
             $profile = new Profile;
