@@ -40,7 +40,7 @@ public function addProperty(Request $request){
             "bedroom"=>'required',
             "bathroom"=>'required',
             "status"=>'required',
-            "property_image"=>"required",
+            "property_image"=>'image|nullable|max:1999|mimes:jpeg,png,jpg'
         ]);
         $property = new Property;
             $property->user_id = Auth::user()->id;
