@@ -47,7 +47,7 @@
                             </a>
                         </li>
                         <li role="presentation">
-                            <a href='{{ url("/comment/{$property->id}") }}'>
+                            <a href=''>
                                 <span class="fa fa-comment-o">Comment ({{$commentCounter}})</span>
                             </a>
                         </li>
