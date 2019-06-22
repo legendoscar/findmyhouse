@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\URL;
+use JD\Cloudder\Facades\Cloudder;
 use App\Profile;
 use Auth;
 
@@ -22,20 +23,29 @@ class ProfilesController extends Controller
 
     public function addProfile(Request $request){
         $this->validate($request,[
-            'profile_image'=>'image|nullable|max:1999|mimes:jpeg,png,jpg'
+            'profile_image'=>'required|mimes:jpeg,bmp,jpg,png|between:1, 6000',
 
         ]);
             $profile = new Profile;
             $profile->user_id = Auth::user()->id;
 
-            
-            if(Input::hasFile('profile_image')){
-                $file = Input::file('profile_image');
-                $file->move(public_path(). '/uploads/' , $file->getClientOriginalName());
-                $url = URL::to('/') . '/uploads/' . $file->getClientOriginalName();
-            }
+            if($request->hasfile('profile_image')){
+                $img = $request->file('profile_image');
+                $name = $img->getClientOriginalName();
+                $image_name = $img->getRealPath();
 
-            $profile->profile_image = $url;
+                Cloudder::upload($image_name, null);
+
+                list($width, $height) = getimagesize($image_name);
+
+                $image_url= Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
+
+                //save to uploads directory
+                $img->move(public_path("uploads"), $name);
+            }
+            
+
+            $profile->profile_image = $image_url;
             $profile->save();
            return redirect('/home')->with('response','Profile created successfully');
             

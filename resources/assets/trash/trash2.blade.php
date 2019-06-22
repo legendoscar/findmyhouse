@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\DB;
-use JD\Cloudder\Facades\Cloudder;
 use App\Property;
 use App\Location;
 use App\Like;
@@ -47,18 +46,7 @@ public function addProperty(Request $request){
         ]);
             $files = $request->file('filename');
             $picture =$files[0]->getClientOriginalName();
-            $picture_name = $files[0]->getRealPath();;
-
-            Cloudder::upload($picture_name, null);
-
-            list($width, $height) = getimagesize($picture_name);
-
-            $link= Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
-
-            //save to uploads directory
-            //$files[0]->move(public_path("uploads"), $picture);
-
-       
+            $link= URL::to('/') . '/properties/' .  $picture;
 
             $property = new Property;
             $property->user_id = Auth::user()->id;
@@ -78,23 +66,14 @@ public function addProperty(Request $request){
         if($request->hasfile('filename'))
          {
 
-            foreach($request->file('filename') as $img)  
+            foreach($request->file('filename') as $image)  
             {
-                $name = $img->getClientOriginalName();
-                $image_name = $img->getRealPath();
-
-                Cloudder::upload($image_name, null);
-
-                list($width, $height) = getimagesize($image_name);
-
-                $image_url= Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
-
-                //save to uploads directory
-                $img->move(public_path("uploads"), $name);
-                
+                $name=$image->getClientOriginalName();
+                $image->move(public_path().'/properties/', $name); 
+                $url= URL::to('/') . '/properties/' . $image->getClientOriginalName(); 
                 $image = new Image;
                 $image->properties_id = $property->id;
-                $image->images = $image_url;
+                $image->images = $url;
                 $image->save(); 
             }
             
