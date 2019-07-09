@@ -12,7 +12,7 @@
                 <div class="col-lg-6 header-top-left">
                     <div class="top-info">
                         <i class="fa fa-phone"></i>
-                        (+234) 814 214 6183
+                        (+234) 09037096290
                     </div>
                     <div class="top-info">
                         <i class="fa fa-envelope"></i>
@@ -49,7 +49,6 @@
                         <!-- <li><a href="places.php">PLACES</a></li> -->
                         <li><a href="/categories">FILTER BY</a></li>
                         <li><a href="/blog">NEWS</a></li>
-                        <li><a href="#">HOW TO</a></li>
                         <li><a href="/about">ABOUT US</a></li>
                         <li><a href="/contact">Contact</a></li>
 

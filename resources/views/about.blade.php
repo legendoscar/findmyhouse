@@ -21,7 +21,7 @@
 	<!-- page -->
 	<section class="page-section">
 		<div class="container">
-			<img class="mb-5" src="img/about.jpg" alt="">
+			<img class="mb-5" src="img/abou.jpg" alt="">
 			<div class="row about-text">
 				<div class="col-xl-6 about-text-left">
 					<h5>ABOUT US</h5>
@@ -41,54 +41,7 @@
 			</div>
 		</div>
 
-		<!-- Review section -->
-		<section class="review-section set-bg" data-setbg="img/review-bg.jpg">
-			<div class="container">
-				<div class="review-slider owl-carousel">
-					<div class="review-item text-white">
-						<div class="rating">
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-						</div>
-						<p>“findmyhouse was quick to understand my needs and steer me in the right direction. Their professionalism and warmth made the process of finding a suitable home a lot less stressful than it could have been. Thanks, agent Tony Holland.”</p>
-						<h5>Stacy Mc Neeley</h5>
-						<span>CEP’s Director</span>
-						<div class="clint-pic set-bg" data-setbg="img/review/1.jpg"></div>
-					</div>
-					<div class="review-item text-white">
-						<div class="rating">
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-						</div>
-						<p>“findmyhouse was quick to understand my needs and steer me in the right direction. Their professionalism and warmth made the process of finding a suitable home a lot less stressful than it could have been. Thanks, agent Tony Holland.”</p>
-						<h5>Stacy Mc Neeley</h5>
-						<span>CEP’s Director</span>
-						<div class="clint-pic set-bg" data-setbg="img/review/1.jpg"></div>
-					</div>
-					<div class="review-item text-white">
-						<div class="rating">
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-						</div>
-						<p>“findmyhouse was quick to understand my needs and steer me in the right direction. Their professionalism and warmth made the process of finding a suitable home a lot less stressful than it could have been. Thanks, agent Tony Holland.”</p>
-						<h5>Stacy Mc Neeley</h5>
-						<span>CEP’s Director</span>
-						<div class="clint-pic set-bg" data-setbg="img/review/1.jpg"></div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- Review section end-->
-
+		
 
 		<!-- Team section -->
 		<section class="team-section spad pb-0">
@@ -101,7 +54,7 @@
 					<div class="col-lg-4 col-md-6">
 						<div class="team-member">
 							<div class="member-pic">
-								<img src="img/team/1.jpg" alt="#">
+								<img src="img/team/1.png" alt="#">
 								<div class="member-social">
 									<a href=""><i class="fa fa-facebook"></i></a>
 									<a href=""><i class="fa fa-instagram"></i></a>
@@ -121,7 +74,7 @@
 					<div class="col-lg-4 col-md-6">
 						<div class="team-member">
 							<div class="member-pic">
-								<img src="img/team/2.jpg" alt="#">
+								<img src="img/team/1.png" alt="#">
 								<div class="member-social">
 									<a href=""><i class="fa fa-facebook"></i></a>
 									<a href=""><i class="fa fa-instagram"></i></a>
@@ -141,7 +94,7 @@
 					<div class="col-lg-4 col-md-6">
 						<div class="team-member">
 							<div class="member-pic">
-								<img src="img/team/3.jpg" alt="#">
+								<img src="img/team/rex.jpg" alt="#">
 								<div class="member-social">
 									<a href=""><i class="fa fa-facebook"></i></a>
 									<a href=""><i class="fa fa-instagram"></i></a>
@@ -149,11 +102,11 @@
 								</div>
 							</div>
 							<div class="member-info">
-								<h5>Amadi Austin</h5>
-								<span>Web Developer</span>
+								<h5>Amadi Austin Chukwuemeka</h5>
+								<span>Software Engineer</span>
 								<div class="member-contact">
-									<p><i class="fa fa-phone"></i>(234) 666 121 2255</p>
-									<p><i class="fa fa-envelope"></i>rexteroxy@gmail.com</p>
+									<p><i class="fa fa-phone"></i>(234) 09037096290</p>
+									<p><i class="fa fa-envelope"></i>rexsteroxy22@gmail.com</p>
 								</div>
 							</div>
 						</div>
@@ -161,7 +114,7 @@
 					<div class="col-lg-4 col-md-6 mt-lg-5">
 						<div class="team-member">
 							<div class="member-pic">
-								<img src="img/team/3.jpg" alt="#">
+								<img src="img/team/1.png" alt="#">
 								<div class="member-social">
 									<a href=""><i class="fa fa-facebook"></i></a>
 									<a href=""><i class="fa fa-instagram"></i></a>
@@ -181,7 +134,7 @@
 					<div class="col-lg-4 col-md-6 mt-lg-5">
 						<div class="team-member">
 							<div class="member-pic">
-								<img src="img/team/2.jpg" alt="#">
+								<img src="img/team/1.png" alt="#">
 								<div class="member-social">
 									<a href=""><i class="fa fa-facebook"></i></a>
 									<a href=""><i class="fa fa-instagram"></i></a>
@@ -201,7 +154,7 @@
 					<div class="col-lg-4 col-md-6 mt-lg-5">
 						<div class="team-member">
 							<div class="member-pic">
-								<img src="img/team/4.jpg" alt="#">
+								<img src="img/team/1.png" alt="#">
 								<div class="member-social">
 									<a href=""><i class="fa fa-facebook"></i></a>
 									<a href=""><i class="fa fa-instagram"></i></a>
@@ -227,29 +180,7 @@
 	<!-- page end -->
 
 
-	<!-- Clients section -->
-	<div class="clients-section">
-		<div class="container">
-			<div class="clients-slider owl-carousel">
-				<a href="#">
-					<img src="img/partner/1.png" alt="">
-				</a>
-				<a href="#">
-					<img src="img/partner/2.png" alt="">
-				</a>
-				<a href="#">
-					<img src="img/partner/3.png" alt="">
-				</a>
-				<a href="#">
-					<img src="img/partner/4.png" alt="">
-				</a>
-				<a href="#">
-					<img src="img/partner/5.png" alt="">
-				</a>
-			</div>
-		</div>
-	</div>
-	<!-- Clients section end -->
+	
 
 
 @endsection

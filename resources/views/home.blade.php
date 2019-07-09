@@ -22,7 +22,7 @@
             <div class="panel panel-default text-center">
                 <div class="panel-heading">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-4">  
                         Dashboard
                      </div>
                      <div class="col-md-8">

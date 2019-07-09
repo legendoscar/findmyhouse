@@ -18,7 +18,7 @@
                     <div class="contact-widget">
                         <h5 class="fw-title">CONTACT US</h5>
                         <p><i class="fa fa-map-marker"></i>32 Wetheral Road, Owerri </p>
-                        <p><i class="fa fa-phone"></i>(+234) 814 214 6183</p>
+                        <p><i class="fa fa-phone"></i>(+234) 09037096290</p>
                         <p><i class="fa fa-envelope"></i>info@findmyhouse.com</p>
                         <p><i class="fa fa-clock-o"></i>Mon - Sat, 08 AM - 06 PM</p>
                     </div>
@@ -57,10 +57,10 @@
                     <ul>
                         <li><a href="/">Home</a></li>
                         <li><a href="/listings">Property Listings</a></li>
-                        <li><a href="/places"> Places</a></li>
+                        
                         <li><a href="/categories"> Categories</a></li>
                         <li><a href="blog"> News</a></li>
-                        <li><a href="#">How to</a></li>
+                       
                         <li><a href="/contact">Contact us</a></li>
                         <li><a href="/about">About us</a></li>
                         <li><a href="/register">Become our Agent</a></li>

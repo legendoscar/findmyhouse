@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
+use App\Property;
+use App\Location;
 class PagesController extends Controller
 {
     
@@ -26,6 +28,24 @@ class PagesController extends Controller
         return view('categories');
     }
     public function getListing(){
-        return view('listings');
+       $locations = Location::all();
+      
+        //for displaying the posts
+            $properties = Property::paginate(2);
+    
+        return view('listings',compact('locations','properties'));
+    }
+    public function view($property_id){
+
+    $properties =Property::where('id', '=', $property_id)->get();
+    $locations = Location::all();
+
+    $images = DB::table('properties')->
+         join('images','properties.id', '=' , 'images.properties_id')
+         ->select('images.*')
+         ->where(['images.properties_id' => $property_id ])
+         ->get();
+    
+    return view('listview',compact('properties','locations','images'));
     }
 }

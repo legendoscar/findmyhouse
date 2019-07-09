@@ -7,7 +7,7 @@
 			<h2>find your place with our local life style</h2>
 			<p>Search real estate property records, houses, condos, land and more on findmyhouse.com®.
 			<br>Find property info from the most comprehensive source data.</p>
-			<a href="#" class="site-btn">VIEW DETAIL</a>
+			<a href="/listings" class="site-btn">VIEW HOUSES</a>
 		</div>
 	</section>
 	<!-- Hero section end -->

@@ -18,6 +18,7 @@ Route::get('categories', 'PagesController@getCategories');
 Route::get('contact', 'PagesController@getContact');
 Route::get('listings', 'PagesController@getListing');
 Route::get('places', 'PagesController@getPlaces');
+Route::get('listview/{id}','PagesController@view');
 
 //Routes for All Registrations and login
 Auth::routes();
