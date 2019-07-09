@@ -31,7 +31,7 @@ class PagesController extends Controller
        $locations = Location::all();
       
         //for displaying the posts
-            $properties = Property::paginate(2);
+            $properties = Property::paginate(10);
     
         return view('listings',compact('locations','properties'));
     }
